@@ -1,0 +1,236 @@
+/* МОДАЛЬНОЕ ОКНО */
+.backdrop {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0, 0, 0, 0.2);
+
+ opacity: 1;
+ transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+ opacity: 0;
+ pointer-events: none;
+ visibility: hidden;
+}
+
+.backdrop.is-hidden .modal {
+ transform: translate(-50%, -50%) scale(0.9);
+ opacity: 0;
+}
+
+.modal {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+
+ width: 530px;
+ min-height: 580px;
+
+ background-color: $white-color;
+
+ opacity: 1;
+ transform: translate(-50%, -50%) scale(1);
+ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+ &__form {
+  display: flex;
+  flex-direction: column;
+
+  padding: 40px;
+ }
+
+ &__title {
+  margin-bottom: 30px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+
+  color: $title-text-color;
+ }
+
+ &__field {
+  position: relative;
+
+  margin-bottom: 28px;
+
+  &--mb {
+   margin-bottom: 20px;
+  }
+ }
+
+ &__input {
+  width: 100%;
+  margin: 0;
+  padding: 10px 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  &:focus {
+   outline: 1px solid $accent-color;
+   border: 1px solid $accent-color;
+  }
+
+  &:focus + .modal__label,
+  &:not(:placeholder-shown) + .modal__label {
+   color: $accent-color;
+   left: 16px;
+   transform: translateY(-38px);
+  }
+
+  &:focus ~ .modal__icon,
+  &:not(:placeholder-shown) ~ .modal__icon {
+   fill: $accent-color;
+  }
+ }
+
+ &__label {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 42px;
+
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+
+  color: $primary-text-color;
+
+  transform: translateY(-50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), left 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ &__icon {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  fill: $title-text-color;
+
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ &__textarea {
+  resize: none;
+  width: 100%;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  &:focus {
+   outline: 1px solid $accent-color;
+   border: 1px solid $accent-color;
+  }
+
+  &:focus + .modal__textarea-label,
+  &:not(:placeholder-shown) + .modal__textarea-label {
+   color: $accent-color;
+   transform: translateY(-30px);
+  }
+ }
+
+ &__textarea-label {
+  pointer-events: none;
+  position: absolute;
+  top: 12px;
+  left: 16px;
+
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+
+  color: $primary-text-color;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ &__checkbox-label {
+  padding: 0 10px;
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+
+  color: $primary-text-color;
+ }
+
+ &__checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+
+  &:checked + .modal__checkbox-icon {
+   border-color: $accent-color;
+   background-color: $accent-color;
+   background-size: contain;
+   background-image: url('../image/icon-check.svg');
+   background-origin: border-box;
+  }
+ }
+
+ &__checkbox-icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 8px;
+
+  border: 2px solid #000000;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+ }
+
+ &__label-accent {
+  color: $accent-color;
+ }
+
+ &__submit-button {
+  @extend %button;
+  max-width: 200px;
+  padding: 10px 55px;
+  margin: 0 auto;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+ }
+
+ &__close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+
+  fill: #000000;
+  background: $white-color;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  &:hover,
+  &:focus {
+   border-radius: 50%;
+   cursor: pointer;
+   fill: $accent-color;
+  }
+ }
+}

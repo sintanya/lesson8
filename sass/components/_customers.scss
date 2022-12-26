@@ -1,0 +1,43 @@
+.customers {
+ @extend %section;
+
+ &__title {
+  @extend %section-title;
+ }
+
+ &__list {
+  display: flex;
+  justify-content: center;
+ }
+
+ &__item {
+  width: 170px;
+  height: 90px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #afb1b8;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+   color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+   color: $accent-color;
+   border-color: $accent-color;
+   cursor: pointer;
+  }
+
+  & + & {
+   margin-left: 30px;
+  }
+ }
+
+ &__icon {
+  fill: currentColor;
+ }
+}

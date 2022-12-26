@@ -1,0 +1,48 @@
+%section {
+ padding-top: 94px;
+ padding-bottom: 94px;
+}
+
+%section-title {
+ margin-bottom: 50px;
+
+ color: $title-text-color;
+
+ font-size: 36px;
+ line-height: 1.17;
+
+ text-align: center;
+}
+
+%contacts-link {
+ color: $primary-text-color;
+
+ font-weight: 500;
+ font-size: 14px;
+ line-height: 1.14;
+ letter-spacing: 0.02em;
+ text-decoration: none;
+}
+
+%button {
+ border-radius: 4px;
+ border: none;
+
+ color: $white-color;
+ background-color: $accent-color;
+
+ font-weight: 700;
+ font-size: 16px;
+ line-height: 1.88;
+
+ letter-spacing: 0.06em;
+ text-decoration: none;
+ cursor: pointer;
+
+ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+ &:hover,
+ &:focus {
+  background-color: #0672ca;
+ }
+}
