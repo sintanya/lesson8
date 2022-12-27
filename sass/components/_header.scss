@@ -15,36 +15,51 @@
   margin-top: 10px;
   margin-bottom: 5px;
  }
- &__button {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  border: none;
-  background-color: transparent;
 
-  color: #000000;
-
-  &:hover,
-  &:focus {
-   cursor: pointer;
-   fill: $accent-color;
+ @media screen and(min-width: 768px) {
+  &__button {
+   display: none;
   }
  }
 
- &__icon-cross {
-  display: none;
+ @media screen and(max-width: 768px) {
+  &__button {
+   display: inline-block;
+   margin: 0;
+   padding: 0;
+   border: none;
+   background-color: transparent;
+
+   color: #000000;
+
+   &:hover,
+   &:focus {
+    cursor: pointer;
+    fill: $accent-color;
+   }
+  }
  }
 
- &__button.is-open &__icon-cross {
-  display: block;
+ @media screen and(max-width: 768px) {
+  &__icon-cross {
+   display: none;
+  }
  }
 
- &__button.is-open &__icon-menu {
-  display: none;
+ @media screen and(max-width: 768px) {
+  &__button.is-open &__icon-cross {
+   display: block;
+  }
+ }
+
+ @media screen and(max-width: 768px) {
+  &__button.is-open &__icon-menu {
+   display: none;
+  }
  }
 
  &__menu {
-  @media screen and(max-width: 780px) {
+  @media screen and(max-width: 768px) {
    display: none;
 
    position: absolute;
@@ -74,13 +89,14 @@
  //  margin-left: 86px;
 
  //  &__item {
+ // position: relative;
  //   //   &:not(:last-child) {
  //   //    margin-right: 50px;
  //   //   }
  //  }
 
  &__item {
-  @media screen and(max-width: 780px) {
+  @media screen and(max-width: 768px) {
    margin-bottom: 46px;
   }
  }
@@ -126,7 +142,7 @@
 }
 
 .contacts {
- @media screen and(max-width: 780px) {
+ @media screen and(max-width: 768px) {
   margin-top: 60px;
  }
  //  display: flex;
@@ -137,13 +153,13 @@
  //  }
 
  &__item {
-  @media screen and(max-width: 780px) {
+  @media screen and(max-width: 768px) {
    margin-bottom: 16px;
   }
  }
 
  &__link {
-  @media screen and(max-width: 780px) {
+  @media screen and(max-width: 768px) {
    font-size: 18px;
    line-height: 1.16;
   }
