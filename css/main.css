@@ -39,8 +39,22 @@ body {
 .container {
   margin-right: auto;
   margin-left: auto;
-  width: 1200px;
   padding: 0 15px;
+}
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
 }
 
 .portfolio-section, .customers, .team, .works, .features {
@@ -95,6 +109,12 @@ body {
 .logo--accent {
   color: #2196f3;
 }
+@media screen and (max-width: 780px) {
+  .logo {
+    font-size: 24px;
+    line-height: 1.16;
+  }
+}
 
 .hero {
   display: -webkit-box;
@@ -138,6 +158,7 @@ body {
   border-bottom: 1px solid #ececec;
 }
 .header__container {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -146,34 +167,70 @@ body {
           align-items: center;
 }
 .header__navigation {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.header__button {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: #000000;
+}
+.header__button:hover, .header__button:focus {
+  cursor: pointer;
+  fill: #2196f3;
+}
+.header__icon-cross {
+  display: none;
+}
+.header__button.is-open .header__icon-cross {
+  display: block;
+}
+.header__button.is-open .header__icon-menu {
+  display: none;
+}
+@media screen and (max-width: 780px) {
+  .header__menu {
+    display: none;
+    position: absolute;
+    top: 102%;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.16;
+    background-color: #ffffff;
+  }
+  .header__menu.is-open {
+    display: block;
+    padding-top: 61px;
+  }
 }
 
-.nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: 86px;
-}
-.nav__item {
-  position: relative;
-}
-.nav__item:not(:last-child) {
-  margin-right: 50px;
+@media screen and (max-width: 780px) {
+  .nav__item {
+    margin-bottom: 46px;
+  }
 }
 .nav__link {
-  display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  position: relative;
+  padding-bottom: 8px;
   color: #212121;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -196,24 +253,34 @@ body {
   background-color: #2196f3;
 }
 
-.contacts {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: auto;
+@media screen and (max-width: 780px) {
+  .contacts {
+    margin-top: 60px;
+  }
 }
-.contacts__item:not(:last-child) {
-  margin-right: 30px;
+@media screen and (max-width: 780px) {
+  .contacts__item {
+    margin-bottom: 16px;
+  }
 }
 .contacts__link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (max-width: 780px) {
+  .contacts__link {
+    font-size: 18px;
+    line-height: 1.16;
+  }
 }
 .contacts__link:hover, .contacts__link:focus {
   color: #2196f3;
@@ -876,4 +943,13 @@ body {
 .portfolio__category {
   font-size: 16px;
   line-height: 1.88;
+}
+
+.hero,
+.features,
+.works,
+.footer,
+.customers,
+.team {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
