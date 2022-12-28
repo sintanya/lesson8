@@ -58,8 +58,14 @@ body {
 }
 
 .portfolio-section, .customers, .team, .works, .features {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+@media screen and (min-width: 1200px) {
+  .portfolio-section, .customers, .team, .works, .features {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .customers__title, .team__title, .works__name {
@@ -139,20 +145,15 @@ body {
   text-align: center;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.8)), to(rgba(47, 48, 58, 0.8))), url("../image/heromobile.jpg");
   background: linear-gradient(rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8)), url("../image/heromobile.jpg");
-  width: 480px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
   height: 400px;
-}
-@media screen and (min-width: 768px) {
-  .hero {
-    width: 768px;
-    height: 400px;
-  }
 }
 @media screen and (min-width: 1200px) {
   .hero {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.8)), to(rgba(47, 48, 58, 0.8))), url("../image/heroimg.jpg");
     background: linear-gradient(rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8)), url("../image/heroimg.jpg");
-    width: 100%;
     max-width: 1600px;
     height: 600px;
   }
@@ -247,7 +248,7 @@ body {
   padding: 20px;
   text-align: center;
   font-size: 18px;
-  line-height: 1.16;
+  line-height: 1.17;
   background-color: #ffffff;
 }
 .header__menu.is-open {
@@ -395,7 +396,7 @@ body {
 }
 .contacts__link {
   font-size: 18px;
-  line-height: 1.16;
+  line-height: 1.17;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -411,7 +412,7 @@ body {
 @media screen and (min-width: 768px) {
   .contacts__link {
     font-size: 12px;
-    line-height: 1.16;
+    line-height: 1.17;
   }
 }
 @media screen and (min-width: 768px) {
@@ -438,15 +439,65 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.features__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+@media screen and (min-width: 768px) {
+  .features__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+.features__item {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .features__item {
+    width: 354px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .features__item {
+    width: 270px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .features__item:nth-child(even) {
+    margin-left: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .features__item:nth-child(even) {
+    margin-left: 0;
+  }
 }
 .features__item + .features__item {
-  margin-left: 30px;
+  margin-top: 30px;
+}
+@media screen and (min-width: 768px) {
+  .features__item + .features__item {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .features__item + .features__item {
+    margin-left: 30px;
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .features__item:nth-child(-n+2) {
+    margin-bottom: 30px;
+  }
 }
 .features__card {
+  height: 120px;
+  background: #f5f4fa;
+  border-radius: 4px;
+  margin-bottom: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -456,11 +507,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 270px;
-  height: 120px;
-  margin-bottom: 30px;
-  background: #f5f4fa;
-  border-radius: 4px;
 }
 .features__icon {
   width: 70px;
@@ -468,10 +514,16 @@ body {
 }
 .features__title {
   margin-bottom: 10px;
+  text-align: center;
   color: #212121;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .features__title {
+    text-align: start;
+  }
 }
 .features__text {
   font-size: 14px;
@@ -1083,7 +1135,6 @@ body {
   line-height: 1.88;
 }
 
-.features,
 .works,
 .footer,
 .customers,
