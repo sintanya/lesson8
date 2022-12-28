@@ -22,35 +22,44 @@
    <div class="container header__container">
     <nav class="header__navigation">
      <a class="logo" href=""><span class="logo--accent">Web</span> Studio</a>
-     <ul class="header__nav nav">
-      <li class="nav__item">
-       <a class="nav__link" href="./index.html">Студия</a>
-      </li>
-      <li class="nav__item">
-       <a class="nav__link nav__link--current" href="./portfolio.html">Портфолио</a>
-      </li>
-      <li class="nav__item"><a class="nav__link" href="">Контакты</a></li>
-     </ul>
-    </nav>
+     <button type="button" class="header__button" aria-expanded="false" data-menu-button>
+      <svg width="40" height="40" aria-label="Переключатель мобильного меню">
+       <use class="header__icon-menu" href="./image/iconmenu.svg#menu"></use>
+       <use class="header__icon-cross" href="./image/iconmenu.svg#close2"></use>
+      </svg>
+     </button>
 
-    <ul class="header__contacts contacts">
-     <li class="contacts__item">
-      <a class="contacts__link" href="mailto:info@example.com"
-       ><svg class="contacts__icon" width="16px" height="11px">
-        <use href="./image/icons.svg#icon-envelope"></use>
-       </svg>
-       info@devstudio.com
-      </a>
-     </li>
-     <li class="contacts__item">
-      <a class="contacts__link" href="tel:+380991111111"
-       ><svg class="contacts__icon" width="10px" height="15px">
-        <use href="./image/icons.svg#icon-phone"></use>
-       </svg>
-       +38 096 111 11 11
-      </a>
-     </li>
-    </ul>
+     <div class="header__menu" data-menu>
+      <ul class="header__nav nav">
+       <li class="nav__item">
+        <a class="nav__link" href="./index.html">Студия</a>
+       </li>
+       <li class="nav__item">
+        <a class="nav__link nav__link--current" href="./portfolio.html">Портфолио</a>
+       </li>
+       <li class="nav__item"><a class="nav__link" href="">Контакты</a></li>
+      </ul>
+
+      <ul class="header__contacts contacts">
+       <li class="contacts__item">
+        <a class="contacts__link" href="mailto:info@example.com"
+         ><svg class="contacts__icon" width="14px" height="11px">
+          <use href="./image/icons.svg#icon-envelope"></use>
+         </svg>
+         info@devstudio.com
+        </a>
+       </li>
+       <li class="contacts__item">
+        <a class="contacts__link" href="tel:+380991111111"
+         ><svg class="contacts__icon" width="10px" height="15px">
+          <use href="./image/icons.svg#icon-phone"></use>
+         </svg>
+         +38 096 111 11 11
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
    </div>
   </header>
 
@@ -293,5 +302,6 @@
     </section>
    </div>
   </footer>
+  <script src="./js/menu.js"></script>
  </body>
 </html>
