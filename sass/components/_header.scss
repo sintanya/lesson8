@@ -178,8 +178,6 @@
   align-items: center;
  }
 
- //  margin-left: auto;
-
  &__item:not(:last-child) {
   @media screen and(min-width: $width-desktop) {
    margin-right: 30px;
