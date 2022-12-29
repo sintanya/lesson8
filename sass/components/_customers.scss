@@ -7,18 +7,26 @@
 
  &__list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+
+  @media screen and (min-width: $width-desktop) {
+   flex-wrap: nowrap;
+  }
  }
 
  &__item {
-  width: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: calc((100% - 30px) / 2);
   height: 90px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  //   width: 170px;
+  //   height: 90px;
 
   color: #afb1b8;
 
@@ -32,8 +40,40 @@
    cursor: pointer;
   }
 
-  & + & {
-   margin-left: 30px;
+  &:nth-child(odd) {
+   margin-right: 30px;
+  }
+
+  &:nth-child(-n + 4) {
+   margin-bottom: 30px;
+
+   @media screen and (min-width: $width-desktop) {
+    margin-bottom: 0;
+   }
+  }
+
+  @media screen and (min-width: $width-tablet) {
+   width: calc((100% - 60px) / 3);
+   margin-right: 30px;
+   margin-bottom: 30px;
+  }
+
+  &:nth-child(3n) {
+   @media screen and (min-width: $width-tablet) {
+    margin-right: 0;
+   }
+  }
+
+  &:nth-last-child(-n + 3) {
+   @media screen and (min-width: $width-tablet) {
+    margin-bottom: 0;
+   }
+  }
+
+  &:not(:last-child) {
+   @media screen and (min-width: $width-desktop) {
+    margin-right: 30px;
+   }
   }
  }
 
