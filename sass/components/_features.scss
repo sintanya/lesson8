@@ -1,6 +1,11 @@
 .features {
  @extend %section;
 
+ @media screen and (min-width: $width-desktop) {
+  padding-top: 94px;
+  padding-bottom: 0;
+ }
+
  &__name {
   position: absolute;
   width: 1px;
