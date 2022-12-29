@@ -3,11 +3,29 @@
  background-color: #2f303a;
 
  &__container {
-  display: flex;
-  justify-content: space-between;
-
   padding-top: 60px;
   padding-bottom: 60px;
+  @media screen and (min-width: $width-tablet) {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+  }
+
+  @media screen and (min-width: $width-desktop) {
+   justify-content: space-between;
+   padding-top: 38px;
+   padding-bottom: 82px;
+  }
+ }
+
+ &__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: $width-desktop) {
+   align-items: flex-start;
+  }
  }
 
  &__logo {
@@ -21,20 +39,47 @@
   font-style: normal;
   font-size: 14px;
   line-height: 1.71;
+  text-align: center;
+
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $width-desktop) {
+   margin-bottom: 0;
+   text-align: start;
+  }
  }
 
  &__contacts {
   display: flex;
   flex-direction: column;
-  color: rgba(255, 255, 255, 0.6);
+ }
 
-  font-size: 14px;
-  line-height: 1.71;
+ &__social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $width-desktop) {
+   margin-bottom: 0;
+   align-items: flex-start;
+  }
  }
 
  &__link {
   @extend %contacts-link;
-  margin-top: 9px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  margin-top: 8px;
+
+  @media screen and (min-width: $width-desktop) {
+   margin-top: 9px;
+  }
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -47,7 +92,10 @@
  &__title {
   display: inline-block;
   margin-bottom: 20px;
-  margin-top: 12px;
+
+  @media screen and (min-width: $width-desktop) {
+   margin-top: 12px;
+  }
 
   font-size: 14px;
   line-height: 1.14;
@@ -55,25 +103,42 @@
   text-transform: uppercase;
  }
 
- &__form {
-  width: 570px;
-  height: 86px;
+ &__subscription {
+  @media screen and (min-width: $width-tablet) {
+   min-width: 450px;
+  }
  }
 
  &__field {
-  display: flex;
-  flex-direction: column;
+  text-align: center;
+
+  @media screen and (min-width: $width-desktop) {
+   display: flex;
+   flex-direction: column;
+
+   text-align: start;
+  }
  }
 
  &__form-box {
-  display: flex;
-  align-items: center;
+  @media screen and (min-width: $width-desktop) {
+   display: flex;
+   align-items: center;
+  }
  }
 
  &__input {
-  width: 358px;
+  width: 100%;
   height: 50px;
-  margin-right: 12px;
+  max-width: 450px;
+
+  margin-bottom: 20px;
+
+  @media screen and (min-width: $width-desktop) {
+   width: 358px;
+   margin-right: 12px;
+   margin-bottom: 0;
+  }
 
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -90,6 +155,7 @@
   align-items: center;
 
   padding: 10px 29px;
+  margin: 0 auto;
  }
 
  &__icon {
