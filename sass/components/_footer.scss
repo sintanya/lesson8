@@ -100,7 +100,7 @@
 .networks {
  display: flex;
  justify-content: space-between;
- width: 206px;
+ max-width: 206px;
 
  &__link--dark {
   background: rgba(255, 255, 255, 0.1);
